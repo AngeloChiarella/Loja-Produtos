@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "d4130d30-071c-400d-b832-97cb992e1964",
+		"name": "Predize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15570222"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar por nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produto/buscarNome/ 12 Mini",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto",
+								"buscarNome",
+								" 12 Mini"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produto/excluir/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto",
+								"excluir",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"iPhone 12 Mini roxo\",\r\n    \"preco\": 99.0,\r\n    \"quantidade\": 5,\r\n    \"foto\": \"iphone12miniRoxo.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"nome\": \"MacBook Pro 16'' M1 Pro Cinza-Espacial\",\r\n    \"preco\": 16999.0,\r\n    \"quantidade\": 1,\r\n    \"foto\": \"macbookpro16.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produto/alterar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto",
+								"alterar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrinho",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carrinho",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": 2,\r\n        \"nome\": \"iPhone 12 Mini Branco\",\r\n        \"preco\": 7499.0,\r\n        \"quantidade\": 2,\r\n        \"foto\": \"iphone12mini.jpg\"\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"nome\": \"iPhone 13 Pro Azul-Pacífico\",\r\n        \"preco\": 12999.0,\r\n        \"quantidade\": 3,\r\n        \"foto\": \"iphone13pro.jpg\"\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"nome\": \"iPhone 11 Pro Max Verde Meia-Noite\",\r\n        \"preco\": 10999.0,\r\n        \"quantidade\": 2,\r\n        \"foto\": \"iphone11promax.jpg\"\r\n    },\r\n    {\r\n        \"id\": 7,\r\n        \"nome\": \"Samsung Galaxy S21 Preto\",\r\n        \"preco\": 8999.0,\r\n        \"quantidade\": 4,\r\n        \"foto\": \"galaxys21.jpg\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/carrinho/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carrinho",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
