@@ -1,5 +1,5 @@
 export interface ProdutoDados {
-    id: number,
+    id?: number,
     nome: string,
     foto: string,
     preco: number,

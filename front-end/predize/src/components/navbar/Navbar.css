@@ -1,4 +1,5 @@
 .navbar {
+  display: flex;
   width: 100%;
   background-color: rgb(70, 98, 110);
   padding: 10px;
@@ -23,30 +24,9 @@
   font-style: italic;
 }
 
-/* Estilo para a barra de pesquisa */
-.search-bar {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  border: 1px solid white;
-  border-radius: 50px;
-  padding: 5px;
-  max-width: 200px;
-}
-
-.search-bar input {
-  display: flex;
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-size: 15px;
-  font-style: italic;
-  outline: none;
-}
-
 .navbar {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   padding: 1rem;
   background-color: #17191F;

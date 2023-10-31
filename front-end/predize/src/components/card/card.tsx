@@ -1,15 +1,13 @@
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './card.css'
 
 interface CardProps {
-    id:number,
+    id?:number,
     nome: string,
     preco: number,
     quantidade: number
     foto: string
 }
-
-const FOTO_URL = './src/img/'
-/* eslint-disable react-hooks/rules-of-hooks */
 function formatarParaReais(preco:number) {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -17,15 +15,15 @@ function formatarParaReais(preco:number) {
     }).format(preco);
   }
 
-export function Card({ nome, preco, quantidade, foto }: CardProps) {
+export function Card({id, nome, preco, quantidade, foto }: CardProps) {
     return (
         <div className="card-p">
-            <img src={FOTO_URL + foto}/>
+            <img src={foto}/>
             <h2>{nome}</h2>
             <h3>{quantidade} unidades</h3>
             <p><b>Preço: </b>{formatarParaReais(preco)}<br/> 
             10 x  s/ juros de: {formatarParaReais(preco / 10)}</p>
-            <button className='btn'>Adicionar no carrinho</button>
+            <button value={id} className='btn'><AiOutlineShoppingCart /></button>
         </div>
     )
 }

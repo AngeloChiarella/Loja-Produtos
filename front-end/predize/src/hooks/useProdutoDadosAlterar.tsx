@@ -11,8 +11,8 @@ const postData = async (data: ProdutoDados): AxiosPromise<any> => {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const deleteData = async (data: ProdutoDados): AxiosPromise<void> => {
-    const response = axios.delete(API_URL + "/produto" + data.id)
+const deleteData = async (data: ProdutoDados): AxiosPromise<any> => {
+    const response = axios.delete(API_URL + "/produto/excluir/" + data.id)
     return response
 }
 

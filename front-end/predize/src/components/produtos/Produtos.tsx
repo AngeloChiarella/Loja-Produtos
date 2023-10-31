@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import { useProdutoDados } from '../../hooks/useProdutoDados';
-import { Card } from '../card/card';
+import { Card } from '../card/Card';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './Produtos.css';
 
 function Produtos() {
@@ -7,10 +9,13 @@ function Produtos() {
   const { data } = useProdutoDados();
   return (
     <div className='containers'>
+      <div>
+        <Link className='carrinho' to="/carrinho"><AiOutlineShoppingCart /></Link>
+      </div>
       <div className='card-grid'>
-
         {data?.map(produtoDados =>
           <Card
+            id={produtoDados.id}
             nome={produtoDados.nome}
             preco={produtoDados.preco}
             quantidade={produtoDados.quantidade}

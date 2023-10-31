@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useProdutoDados } from '../../hooks/useProdutoDados';
-import { CriarModal } from '../modal/criar-modal';
+import { CriarModal } from '../modal/CreateModal';
 import './estoque.css';
 import { Lista } from '../lista/lista';
 
@@ -14,19 +14,23 @@ function Estoque() {
   }
 
   return (
-    <div className='container'>
-      {isModalOpen && <CriarModal closeModal={handleOpenModal} />}
-      <button onClick={handleOpenModal} >  {isModalOpen ? "Cancelar" : "Novo"}</button>
+    <div>
+      <div className='btn-novo-obj'>
+        {isModalOpen && <CriarModal closeModal={handleOpenModal} />}
+        <button className='btn-new' onClick={handleOpenModal} >  {isModalOpen ? "Cancelar" : "Novo"}</button>
+      </div>
+      <div className='container'>
+        <div className="card-grid">
+          {data?.map(produtoDados =>
+            <Lista
+              id={produtoDados.id}
+              nome={produtoDados.nome}
+              preco={produtoDados.preco}
+              quantidade={produtoDados.quantidade}
+              foto={produtoDados.foto} />
+          )}
 
-      <div className="card-grid">
-        {data?.map(produtoDados =>
-          <Lista
-            nome={produtoDados.nome}
-            preco={produtoDados.preco}
-            quantidade={produtoDados.quantidade}
-            foto={produtoDados.foto} />
-        )}
-
+        </div>
       </div>
     </div>
   )

@@ -1,24 +1,4 @@
 
-.card {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: left;
-    font-size: 10px;
-    font-style: italic;
-    background-color: rgb(70, 98, 110);
-    width: 400px;
-    border-radius: 15px;
-    box-shadow: rgba(0, 255, 242, 0.2) 0px 7px 29px 5px;
-    padding: 1;
-}
-
-.card img {
-    margin-top: 0px;
-    border-radius: 8px 0px 0px 8px;
-    width: 100px;
-    height: 100px;
-}
-
 .btn-edit {
     align-items: center;
     background-color:   rgb(70, 98, 110);
@@ -65,3 +45,24 @@
     opacity: 1;
 }
 
+.btn-new {
+    background-color: #00817b;
+    color: white;
+    font-weight: bold;
+    bottom: 16px;
+    right: 24px;
+    transition: all 0.1s linear 0.1s;
+}
+
+
+.btn-new:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
+    transform: scale(1.1);
+}
+
+.btn-novo-obj {
+    margin-left: 40rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}

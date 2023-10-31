@@ -1,0 +1,30 @@
+.card {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: left;
+    font-size: 10px;
+    font-style: italic;
+    background-color: rgb(70, 98, 110);
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 255, 242, 0.2) 0px 7px 29px 5px;
+    padding: 1;
+}
+
+.card img {
+    margin-top: 0px;
+    border-radius: 8px 0px 0px 8px;
+    width: 100px;
+    height: 100px;
+}
+
+h2 {
+    display: inline;
+    font-size: 1rem;
+}
+
+h3 {
+    display: inline;
+    font-size: 1rem;
+    margin-inline-end: 1rem;
+}

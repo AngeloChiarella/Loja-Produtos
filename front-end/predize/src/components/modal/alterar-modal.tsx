@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react";
 import { useProdutoDadosAlterar } from "../../hooks/useProdutoDadosAlterar";
 import { ProdutoDados } from "../interface/ProdutoDados";
 import './modal.css';
@@ -34,7 +34,8 @@ export function CriarModal({  }: ModalProps) {
             nome,
             preco,
             quantidade,
-            foto
+            foto,
+            id: 0
         }
         mutate(produtoDados)
     }
@@ -60,3 +61,8 @@ export function CriarModal({  }: ModalProps) {
         </div>
     )
 }
+
+function closeModal() {
+    throw new Error("Function not implemented.");
+}
+ */
