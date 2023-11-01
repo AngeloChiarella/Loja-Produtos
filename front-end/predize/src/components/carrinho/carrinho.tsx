@@ -1,33 +1,30 @@
-import React, { useState } from 'react';
-import { ProdutoDados } from '../interface/ProdutoDados'; // Certifique-se de importar a interface correta
+import axios from 'axios';
+import { useCarrinhoDados } from '../../hooks/useCarrinho';
+import { ProdutoDados } from '../interface/ProdutoDados';
 
 interface CarrinhoProps {
   produtos: ProdutoDados[];
 }
 
-const Carrinho: React.FC<CarrinhoProps> = ({ produtos }) => {
-  const [carrinhoProdutos, /* setCarrinhoProdutos */] = useState<ProdutoDados[]>(produtos);
+function Carrinho(produto : ProdutoDados) {
 
-  // Função para remover um produto do carrinho
-/*   const removerProdutoDoCarrinho = (id: number) => {
-    const novoCarrinho = carrinhoProdutos.filter((produto) => produto.id !== id);
-    setCarrinhoProdutos(novoCarrinho);
-  }; */
+  function verificar() {
+    produto.foto = "macbookpro16";
+    const { verify } = useCarrinhoDados();
+    verify.mutate(produto);
+    console.log(verify);
+    axios.get(API_URL + `/produto/buscarFoto/${data.foto}`)
+
+  }
 
   return (
     <div>
+      <button onClick={verificar}>Verificar</button>
       <h2>Carrinho de Compras</h2>
-      <ul>
-        {carrinhoProdutos.map((produto) => (
-          <li key={produto.id}>
-            <img src={produto.foto} alt={produto.nome} />
-            <p>{produto.nome}</p>
-            <p>Preço: R$ {produto.preco}</p>
-            <p>Quantidade: {produto.quantidade}</p>
-{/*             <button onClick={() => removerProdutoDoCarrinho(produto.id)}>Remover</button>
- */}          </li>
-        ))}
-      </ul>
+      <p className='produto img'>Foto: </p>
+      <p className='produto'>nome: nome</p>
+      <p className='info-produto'>Preço: R$ preco</p>
+      <p>Quantidade: quantidade</p>
     </div>
   );
 };

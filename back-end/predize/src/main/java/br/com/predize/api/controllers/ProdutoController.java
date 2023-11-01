@@ -30,10 +30,10 @@ public class ProdutoController {
 				service.listar().isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 
-	@GetMapping("/buscarNome/{nome}")
-	public ResponseEntity<?> listarPorNome(@PathVariable String nome) {
-		return new ResponseEntity<>(service.listarPorFoto(nome),
-				service.listar().isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
+	@GetMapping("/buscarFoto/{foto}")
+	public ResponseEntity<?> listarPorFoto(@PathVariable String foto) {
+		return new ResponseEntity<>(service.listarPorFoto(foto),
+				service.listarPorFoto(foto) != null ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 
 	@PostMapping

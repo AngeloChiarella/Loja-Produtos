@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useProdutoDadosGet } from '../../hooks/useProdutoDadosGet';
-import { Lista } from '../lista/Lista';
+import { Lista } from '../lista/lista';
 import { CriarModal } from '../modal/CreateModal';
 import './estoque.css';
 import { ProdutoDados } from '../interface/ProdutoDados';

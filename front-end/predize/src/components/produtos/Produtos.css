@@ -1,4 +1,5 @@
 .carrinho {
+    position: relative;
     margin-left: 100%;
     padding: 1rem;
     color: aqua;

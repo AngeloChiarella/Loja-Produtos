@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import './App.css'
-import Carrinho from './components/carrinho/Carrinho'
-import Estoque from './components/estoque/Estoque'
+import Carrinho from './components/carrinho/carrinho'
+import Estoque from './components/estoque/estoque'
 import Navbar from './components/navbar/Navbar'
 import Produtos from './components/produtos/Produtos'
 

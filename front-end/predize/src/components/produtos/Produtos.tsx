@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useProdutoDadosGet } from '../../hooks/useProdutoDadosGet';
-import { Card } from '../card/Card';
+import { Card } from '../card/card';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './Produtos.css';
 
