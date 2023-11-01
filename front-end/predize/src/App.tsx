@@ -8,15 +8,16 @@ import Produtos from './components/produtos/Produtos'
 function App() {
   return (
     <div className='container'>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/catalogo" element={<Produtos />} />
-            <Route path="/estoque" element={<Estoque />} />
-            <Route path="/carrinho" element={<Carrinho produtos={[]} />} />
-          </Routes>
-        </Router>
-    </div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Produtos />} />
+          <Route path="/catalogo" element={<Produtos />} />
+          <Route path="/estoque" element={<Estoque />} />
+          <Route path="/carrinho" element={<Carrinho produtos={[]} />} />
+        </Routes>
+      </Router>
+    </div >
   );
 }
 

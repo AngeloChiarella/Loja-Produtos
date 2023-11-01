@@ -1,5 +1,5 @@
 .navbar {
-  display: flex;
+  display: inline;
   width: 100%;
   background-color: rgb(70, 98, 110);
   padding: 10px;
@@ -13,10 +13,6 @@
   display: flex;
 }
 
-.navbar li {
-  margin-right: 200px;
-}
-
 .navbar a {
   text-decoration: none;
   color: white;
@@ -27,7 +23,7 @@
 .navbar {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem;
   background-color: #17191F;
 }

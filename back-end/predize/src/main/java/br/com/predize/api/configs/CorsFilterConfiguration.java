@@ -14,8 +14,6 @@ public class CorsFilterConfiguration {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
 		config.setAllowCredentials(true);
-		config.addAllowedOrigin("http://localhost:8080");
-		config.addAllowedOrigin("http://localhost:8081");
 		config.addAllowedOrigin("http://localhost:5173");
 		config.addAllowedHeader("*");
 		config.addAllowedMethod("OPTIONS");

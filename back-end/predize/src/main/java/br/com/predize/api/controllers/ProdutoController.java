@@ -32,7 +32,7 @@ public class ProdutoController {
 
 	@GetMapping("/buscarNome/{nome}")
 	public ResponseEntity<?> listarPorNome(@PathVariable String nome) {
-		return new ResponseEntity<>(service.listarPorNome(nome),
+		return new ResponseEntity<>(service.listarPorFoto(nome),
 				service.listar().isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 

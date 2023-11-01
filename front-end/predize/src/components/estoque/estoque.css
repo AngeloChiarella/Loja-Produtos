@@ -46,6 +46,7 @@
 }
 
 .btn-new {
+    margin: 10px;
     background-color: #00817b;
     color: white;
     font-weight: bold;

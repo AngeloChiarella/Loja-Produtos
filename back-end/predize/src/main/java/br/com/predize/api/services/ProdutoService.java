@@ -1,6 +1,5 @@
 package br.com.predize.api.services;
 
-import java.text.DecimalFormat;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -28,10 +27,8 @@ public class ProdutoService {
 						 .map(mapper::produtoToDto).collect(Collectors.toList());
 	}
 
-	public List<ProdutoDTO> listarPorNome(String nome) {
-		return repository.findByNome(nome).stream()
-						 .sorted(Comparator.comparing(Produto::getNome))
-						 .map(mapper::produtoToDto).collect(Collectors.toList());
+	public ProdutoDTO listarPorFoto(String foto) {
+		return mapper.produtoToDto(repository.findByFoto(foto));
 	}
 
 	public void cadastrarOuAlterar(ProdutoDTO dto) {

@@ -1,36 +1,40 @@
 import { useState } from 'react';
-import { useProdutoDados } from '../../hooks/useProdutoDados';
+import { useProdutoDadosGet } from '../../hooks/useProdutoDadosGet';
+import { Lista } from '../lista/Lista';
 import { CriarModal } from '../modal/CreateModal';
 import './estoque.css';
-import { Lista } from '../lista/lista';
+import { ProdutoDados } from '../interface/ProdutoDados';
 
 function Estoque() {
 
-  const { data } = useProdutoDados();
+  const { data } = useProdutoDadosGet();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [produtoEdit, setProdutoEdit] = useState<ProdutoDados | null>();
 
-  const handleOpenModal = () => {
-    setIsModalOpen(prev => !prev)
+  const handleOpenModal = (produto?: ProdutoDados) => {
+    setProdutoEdit(produto || null);
+    setIsModalOpen(prev => !prev);
+
   }
 
-  return (
-    <div>
-      <div className='btn-novo-obj'>
-        {isModalOpen && <CriarModal closeModal={handleOpenModal} />}
-        <button className='btn-new' onClick={handleOpenModal} >  {isModalOpen ? "Cancelar" : "Novo"}</button>
-      </div>
-      <div className='container'>
-        <div className="card-grid">
-          {data?.map(produtoDados =>
-            <Lista
-              id={produtoDados.id}
-              nome={produtoDados.nome}
-              preco={produtoDados.preco}
-              quantidade={produtoDados.quantidade}
-              foto={produtoDados.foto} />
-          )}
 
-        </div>
+  return (
+    <div className='container'>
+      {isModalOpen && (
+        <CriarModal key={produtoEdit?.id} closeModal={handleOpenModal} produtoExistente={produtoEdit} />
+      )}
+      <button className='btn-new' onClick={() => handleOpenModal()} >Novo</button>
+      <div className="card-grid">
+        {data?.map(produtoDados =>
+          <Lista
+            id={produtoDados.id}
+            nome={produtoDados.nome}
+            preco={produtoDados.preco}
+            quantidade={produtoDados.quantidade}
+            foto={produtoDados.foto}
+            onEditClick={() => handleOpenModal(produtoDados)}
+          />
+        )}
       </div>
     </div>
   )

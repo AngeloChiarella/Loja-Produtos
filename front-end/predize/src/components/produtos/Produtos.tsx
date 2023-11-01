@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useProdutoDados } from '../../hooks/useProdutoDados';
+import { useProdutoDadosGet } from '../../hooks/useProdutoDadosGet';
 import { Card } from '../card/Card';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './Produtos.css';
 
 function Produtos() {
 
-  const { data } = useProdutoDados();
+  const { data } = useProdutoDadosGet();
   return (
     <div className='containers'>
       <div>
