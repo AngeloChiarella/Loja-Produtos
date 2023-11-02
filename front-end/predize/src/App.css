@@ -4,9 +4,9 @@
   flex-direction: column;
   justify-content: center;
   width: 97.7vw;
-
+  font-weight: 100;
   position: relative;
-  top:40px;
+  top:30px;
 
 }
 

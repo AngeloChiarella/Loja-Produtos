@@ -45,7 +45,7 @@ public class CarrinhoService {
 	public boolean verificarEstoque(List<ProdutoDTO> produtos) throws Exception {
 		List<Produto> atualizaEstoque = new ArrayList<>();
 		for (ProdutoDTO p : produtos) {
-			Produto novo = produtoRepository.findByFoto(p.getFoto());
+			Produto novo = produtoRepository.findByFoto(p.getFoto()).get(0);
 			if (novo.getQuantidade() < p.getQuantidade()) {
 				throw new Exception(
 						"Produto: " + novo.getNome() + " tem apenas " + novo.getQuantidade() + " de itens.");

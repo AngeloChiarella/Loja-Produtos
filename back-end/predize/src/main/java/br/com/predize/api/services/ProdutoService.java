@@ -1,5 +1,6 @@
 package br.com.predize.api.services;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +29,8 @@ public class ProdutoService {
 	}
 
 	public ProdutoDTO listarPorFoto(String foto) {
-		return mapper.produtoToDto(repository.findByFoto(foto));
+		List<Produto> list = repository.findByFoto(foto);
+		return mapper.produtoToDtoList(list).get(0);
 	}
 
 	public void cadastrarOuAlterar(ProdutoDTO dto) {

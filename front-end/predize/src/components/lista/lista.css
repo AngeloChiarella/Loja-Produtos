@@ -18,13 +18,8 @@
     height: 100px;
 }
 
-h2 {
-    display: inline;
-    font-size: 1rem;
-}
-
 h3 {
     display: inline;
     font-size: 1rem;
-    margin-inline-end: 1rem;
+    margin-inline-end: .5rem;
 }

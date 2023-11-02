@@ -20,10 +20,10 @@ export function CriarModal({ closeModal, produtoExistente }: ModalProps) {
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
-            setFoto("./src/img/" + e.target.files[0].name);
+            setFoto(e.target.files[0].name);
         }
     }
-
+      
     useEffect(() => {
         if (produtoExistente) {
             setId(produtoExistente.id)
@@ -52,7 +52,6 @@ export function CriarModal({ closeModal, produtoExistente }: ModalProps) {
 
         closeModal();
     }
-
 
 
     return (

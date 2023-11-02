@@ -18,7 +18,7 @@ interface ListaProps {
 export function Lista({ id, nome, preco, quantidade, foto }: ListaProps) {
 
     const { deleteProduto } = useProdutoDados();
-
+    const url_foto = "./src/img/";
     const [isModalOpen, setIsModalOpen] = useState(false);
     const produtoEdit = { id, nome, preco, quantidade, foto }
 
@@ -46,9 +46,9 @@ export function Lista({ id, nome, preco, quantidade, foto }: ListaProps) {
 
     return (
         <div className="card">
-            <img src={foto} />
+            <img src={url_foto + foto} />
             <h2 className='container'>{nome}</h2>
-            <p><h3>{quantidade} unidades</h3><br />
+            <p><h3>{quantidade} un.</h3><br />
                 <b>Preço: </b>{formatarParaReais(preco || 0) }<br /></p>
 
             <div>

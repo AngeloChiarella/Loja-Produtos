@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useProdutoDadosGet } from '../../hooks/useProdutoDadosGet';
-import { Lista } from '../lista/lista';
+import { Lista } from '../lista/Lista';
 import { CriarModal } from '../modal/CreateModal';
 import './estoque.css';
 import { ProdutoDados } from '../interface/ProdutoDados';
@@ -26,7 +26,7 @@ function Estoque() {
       <button className='btn-new' onClick={() => handleOpenModal()} >Novo</button>
       <div className="card-grid">
         {data?.map(produtoDados =>
-          <Lista
+          <Lista key={produtoDados.id}
             id={produtoDados.id}
             nome={produtoDados.nome}
             preco={produtoDados.preco}
@@ -34,7 +34,7 @@ function Estoque() {
             foto={produtoDados.foto}
             onEditClick={() => handleOpenModal(produtoDados)}
           />
-        )}
+        )}  
       </div>
     </div>
   )
