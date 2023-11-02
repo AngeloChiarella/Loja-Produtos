@@ -40,8 +40,11 @@
                    Predize\front-end\predize> 
 - Inserir o comando:
 
-                   npm run dev 
+                   npm install 
 
+- Inserir o comando:
+
+                   npm run dev 
 ## Funcionalidades:
 
 - A api consiste em um gerenciamento de dados de produtos e seus atributos, em endpoints distintos ("/produto" e "/carrinho").
